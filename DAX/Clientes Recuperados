@@ -1,0 +1,50 @@
+Clientes Recuperados = 
+VAR vDataMin = MIN (dTempo[DATA]) 
+VAR tClienteDataPerda = 
+/*  CRIA UMA TABELA QUE PARA CADA CLIENTE CONTÉM A DATA DE PERDA TEMPORÁRIA, INDEPENDENTE DOS FILTROS DE CLIENTE E DE TEMPO */
+CALCULATETABLE(                                                 
+    ADDCOLUMNS(                                                 
+        VALUES( Faturamento[COD_CLIENTE] ),
+        "DataPerdaTemporaria", 
+        CALCULATE(
+            [Data Ref. Inativo],
+            dTempo[DATA] < vDataMin)
+    ),
+    ALLSELECTED( dCliente ),                                   
+    ALLSELECTED( dTempo ))
+
+VAR tClientesComDataPerda =                                     
+/*  RETIRA OS CLIENTES QUE NÃO TEM DATA DE PERDA */
+FILTER(
+    tClienteDataPerda,
+    NOT ISBLANK( [DataPerdaTemporaria] )
+)
+
+VAR ClientesAtivos =                                           
+ /* PEGA A DATA DA PRIMEIRA COMPRA DOS CLIENTES NA SELECAO */
+ADDCOLUMNS(
+    VALUES(Faturamento[COD_CLIENTE]),
+    "MinimaData",
+    CALCULATE(
+        MIN( Faturamento[PERIODO] ), Faturamento[TIPO_FATURAMENTO] = "Vendas")
+)
+
+VAR ClientesRecuperados =                           
+/* FILTRA OS CLIENTES TEMPORARIAMENTE PERDIDOS AO COMBINAR CLIENTES PERDIDOS POTENCIAIS E CLIENTES ATIVOS E ENTÃO COMPARAR AS DATAS */
+FILTER(                                                         
+    NATURALINNERJOIN(                                       
+        ClientesAtivos,
+        tClienteDataPerda
+        ), 
+        [MinimaData] > [DataPerdaTemporaria])
+
+
+VAR vResultado =
+CALCULATE(
+    COUNTROWS(                                                      
+        FILTER(
+        ClientesRecuperados
+, [Clientes Novos] <> 1)
+    )
+)
+RETURN vResultado
