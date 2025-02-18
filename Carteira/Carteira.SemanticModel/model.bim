@@ -1,0 +1,1028 @@
+{
+  "compatibilityLevel": 1567,
+  "model": {
+    "annotations": [
+      {
+        "name": "PBI_QueryOrder",
+        "value": "[\"F - News\",\"F - Historical Prices\",\"F - Returns\",\"F - Transactions\",\"D - Stocks\",\"D - Date\"]"
+      },
+      {
+        "name": "__PBI_TimeIntelligenceEnabled",
+        "value": "0"
+      },
+      {
+        "name": "PBIDesktopVersion",
+        "value": "2.139.2054.0 (24.12)+334ca1c95b576cc53924655643b0d36f21caac55"
+      },
+      {
+        "name": "PBI_ProTooling",
+        "value": "[\"DevMode\"]"
+      }
+    ],
+    "culture": "pt-BR",
+    "cultures": [
+      {
+        "name": "pt-BR",
+        "linguisticMetadata": {
+          "content": {
+            "Language": "en-US",
+            "Version": "1.0.0"
+          },
+          "contentType": "json"
+        }
+      }
+    ],
+    "dataAccessOptions": {
+      "legacyRedirects": true,
+      "returnErrorValuesAsNull": true
+    },
+    "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "relationships": [
+      {
+        "name": "AutoDetected_d8b197d0-fcf2-43c6-9ea6-848e6384cdd3",
+        "fromColumn": "ticker",
+        "fromTable": "F - Historical Prices",
+        "toColumn": "ticker",
+        "toTable": "D - Stocks"
+      },
+      {
+        "name": "AutoDetected_4d9a901b-d889-4cb8-ad30-aa9c0f7441a4",
+        "fromColumn": "ticker",
+        "fromTable": "F - Returns",
+        "toColumn": "ticker",
+        "toTable": "D - Stocks"
+      },
+      {
+        "name": "AutoDetected_92b18412-2559-4884-813a-0522b14e5a46",
+        "fromColumn": "ticker",
+        "fromTable": "F - Transactions",
+        "toColumn": "ticker",
+        "toTable": "D - Stocks"
+      },
+      {
+        "name": "5f5beb45-aa66-7602-fbe3-706cdf120fbc",
+        "fromColumn": "date",
+        "fromTable": "F - Historical Prices",
+        "toColumn": "Date",
+        "toTable": "D - Date"
+      },
+      {
+        "name": "ce0cd693-219a-5092-c285-c8884f311b73",
+        "fromColumn": "transac_date",
+        "fromTable": "F - Transactions",
+        "toColumn": "Date",
+        "toTable": "D - Date"
+      },
+      {
+        "name": "54cb5383-9018-9e69-c870-c34791506a65",
+        "fromColumn": "dt",
+        "fromTable": "F - Returns",
+        "toColumn": "Date",
+        "toTable": "D - Date"
+      },
+      {
+        "name": "1e80a64c-e09d-f7bd-1f6c-7c165af5ec6c",
+        "fromColumn": "ticker",
+        "fromTable": "F - News",
+        "toColumn": "ticker",
+        "toTable": "D - Stocks"
+      },
+      {
+        "name": "5a0fcd17-182b-e274-96ab-9e64ddb4fefd",
+        "fromColumn": "pubDate",
+        "fromTable": "F - News",
+        "toColumn": "Date",
+        "toTable": "D - Date"
+      }
+    ],
+    "sourceQueryCulture": "pt-BR",
+    "tables": [
+      {
+        "name": "F - News",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navegação"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "index",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "467b6dbb-8668-4ad3-a2fa-b1a8ea77fd4b",
+            "sourceColumn": "index",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "id",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "eeb47ba0-d55d-49ab-ab74-48094b82b7d3",
+            "sourceColumn": "id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "title",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "5d7941e7-aeaf-4f82-9294-de971191a71f",
+            "sourceColumn": "title",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "description",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "6a698ad5-b755-4b68-8f46-25a48cba3f35",
+            "sourceColumn": "description",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "storyline",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "3477f767-5d49-42ed-9d92-4c50d670ce22",
+            "sourceColumn": "storyline",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "summary",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "8a25035d-b4ef-4963-bb17-5dcb5f7ec30b",
+            "sourceColumn": "summary",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "provider.displayName",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "04780208-4251-4ae0-91a0-adb058a31b45",
+            "sourceColumn": "provider.displayName",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "pubDate",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "lineageTag": "d064759a-648a-437b-a4f6-1c95ec1232c0",
+            "sourceColumn": "pubDate",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "ticker",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "6ee505e1-061f-41b6-86bb-42fd497761d2",
+            "sourceColumn": "ticker",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "clickThroughUrl.url",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "a20e8c96-f8a0-41c7-9ec5-7f297e9c36f6",
+            "sourceColumn": "clickThroughUrl.url",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "87ce2262-ad44-4899-8f80-131309fd40de",
+        "partitions": [
+          {
+            "name": "F - News",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Fonte = PostgreSQL.Database(\"localhost:5432\", \"inv\"),",
+                "    public_stock_news = Fonte{[Schema=\"public\",Item=\"stock_news\"]}[Data],",
+                "    #\"Tipo Alterado\" = Table.TransformColumnTypes(public_stock_news,{{\"pubDate\", type datetime}}),",
+                "    #\"Tipo Alterado1\" = Table.TransformColumnTypes(#\"Tipo Alterado\",{{\"pubDate\", type date}}),",
+                "    #\"Texto Extraído Antes do Delimitador\" = Table.TransformColumns(#\"Tipo Alterado1\", {{\"ticker\", each Text.BeforeDelimiter(_, \".\"), type text}})",
+                "in",
+                "    #\"Texto Extraído Antes do Delimitador\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "F - Historical Prices",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navegação"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "ticker",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "4bc3c601-3b19-4c40-aa8e-2dad76692f70",
+            "sourceColumn": "ticker",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "date",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "lineageTag": "2b13dd49-2243-40fa-b656-6217a788ae7e",
+            "sourceColumn": "date",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "open",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "c66ef64b-951c-4ee2-beaf-33625c5f5603",
+            "sourceColumn": "open",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "close",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "e3a4ada4-f4fc-43ba-8502-c8a223d062cb",
+            "sourceColumn": "close",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "low",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "38735408-fb6c-4f74-9377-52f0c8c12c89",
+            "sourceColumn": "low",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "high",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "123da06e-af0e-4d23-a229-52bfe49b2867",
+            "sourceColumn": "high",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "volume",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "8076c553-e726-4636-ac0d-eb0d632b6450",
+            "sourceColumn": "volume",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "adjustedclose",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "77bf91fe-dd87-421d-914c-8177824d9b12",
+            "sourceColumn": "adjustedclose",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "loaded_at",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "lineageTag": "c6477a11-eb86-4d1d-8bf3-aad481bf80cc",
+            "sourceColumn": "loaded_at",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "41d75066-7878-4d58-8dcf-449442e62ac9",
+        "partitions": [
+          {
+            "name": "F - Historical Prices",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Fonte = PostgreSQL.Database(\"localhost:5432\", \"inv\"),",
+                "    public_stock_quotes_history = Fonte{[Schema=\"public\",Item=\"stock_quotes_history\"]}[Data],",
+                "    #\"Tipo Alterado\" = Table.TransformColumnTypes(public_stock_quotes_history,{{\"date\", type date}})",
+                "in",
+                "    #\"Tipo Alterado\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "F - Returns",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navegação"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "dt",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "lineageTag": "8b4eaebe-62a4-415b-ae75-9f5a0ec1f4df",
+            "sourceColumn": "dt",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "ticker",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "af974767-4079-4988-a161-601a1167420d",
+            "sourceColumn": "ticker",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "total_position",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "db8f88b7-bf42-44a2-9731-fef6a8fb920f",
+            "sourceColumn": "total_position",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "total_quantity",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "9dfcd2d8-9924-46db-b95f-0d11da913e09",
+            "sourceColumn": "total_quantity",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "pm",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "0cae2168-b53b-4030-b3ad-8b4562b77eea",
+            "sourceColumn": "pm",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "position_open",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "69831ff8-93c7-4ef3-a067-32fae031f94b",
+            "sourceColumn": "position_open",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "position_close",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "dba58823-ec82-4f25-8df2-cc3dd0806946",
+            "sourceColumn": "position_close",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "position_high",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "7769a2d7-ee35-4461-b3c8-05c7ea848d62",
+            "sourceColumn": "position_high",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "pl_open",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "14da0cbb-3a37-4b53-abbf-9fead891918a",
+            "sourceColumn": "pl_open",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "pl_close",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "3deaf461-5e1a-49bf-a866-5b77a92fe064",
+            "sourceColumn": "pl_close",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "pl_high",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "35fc343c-70a8-484e-8c08-b7c955c85921",
+            "sourceColumn": "pl_high",
+            "summarizeBy": "sum"
+          }
+        ],
+        "lineageTag": "720a0e15-288b-48fc-a170-d133cd5aa07d",
+        "partitions": [
+          {
+            "name": "F - Returns",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Fonte = PostgreSQL.Database(\"localhost:5432\", \"inv\"),",
+                "    dbt_dbt_porfolio_returns = Fonte{[Schema=\"dbt\",Item=\"dbt_porfolio_returns\"]}[Data]",
+                "in",
+                "    dbt_dbt_porfolio_returns"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "F - Transactions",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navegação"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "transac_id",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "13938d71-cfa2-4212-b8e7-72b365f81c7d",
+            "sourceColumn": "transac_id",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "ticker",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "acbc1714-4feb-4c98-a16e-ed89c9633240",
+            "sourceColumn": "ticker",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "transac_date",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "lineageTag": "54fe4aed-9c71-47e7-9844-390932fc57d1",
+            "sourceColumn": "transac_date",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "price",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "638cf4e7-939d-42f5-965f-5d58a466cc59",
+            "sourceColumn": "price",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "quantity",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "3cdce2bc-a15a-49fa-bfee-ba10997023dd",
+            "sourceColumn": "quantity",
+            "summarizeBy": "sum"
+          }
+        ],
+        "lineageTag": "0f0737d8-1980-4ee1-b0ba-6a01d7754f2a",
+        "partitions": [
+          {
+            "name": "F - Transactions",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Fonte = PostgreSQL.Database(\"localhost:5432\", \"inv\"),",
+                "    public_transac = Fonte{[Schema=\"public\",Item=\"transac\"]}[Data],",
+                "    #\"Tipo Alterado\" = Table.TransformColumnTypes(public_transac,{{\"transac_date\", type date}})",
+                "in",
+                "    #\"Tipo Alterado\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "D - Stocks",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navegação"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "shortName",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "b3291d87-deda-4dd4-9d4e-dc4d13cf3393",
+            "sourceColumn": "shortName",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "longName",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "32144d52-83c7-4a92-8090-b714597dcd20",
+            "sourceColumn": "longName",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "symbol",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "100ba296-cfa3-414e-b0ac-68c4aa1eddc5",
+            "sourceColumn": "symbol",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "logourl",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "87210e8a-6bda-418c-8f9c-a1952d88a5e5",
+            "sourceColumn": "logourl",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "ticker",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "c0d865ee-76b4-4085-8f4a-a396bf442fea",
+            "sourceColumn": "ticker",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "c442708f-d091-4fe7-b4f9-7b2e83e520d7",
+        "partitions": [
+          {
+            "name": "D - Stocks",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Fonte = PostgreSQL.Database(\"localhost:5432\", \"inv\"),",
+                "    public_stock_info = Fonte{[Schema=\"public\",Item=\"stock_info\"]}[Data],",
+                "    #\"Colunas Removidas\" = Table.RemoveColumns(public_stock_info,{\"currency\", \"index\", \"regularMarketChange\", \"regularMarketChangePercent\", \"regularMarketTime\", \"regularMarketPrice\", \"regularMarketDayHigh\", \"regularMarketDayRange\", \"regularMarketDayLow\", \"regularMarketVolume\", \"regularMarketPreviousClose\", \"regularMarketOpen\", \"fiftyTwoWeekRange\", \"fiftyTwoWeekLow\", \"fiftyTwoWeekHigh\", \"priceEarnings\", \"earningsPerShare\"})",
+                "in",
+                "    #\"Colunas Removidas\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "D - Date",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navegação"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Date",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "SortByColumn"
+              },
+              {
+                "property": "DataType"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Short Date",
+            "lineageTag": "2dbf918c-4493-403e-a67d-6a68358af4e7",
+            "sourceColumn": "Date",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Mês",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "dffe3ed5-7faf-491a-983d-f42ecd8946d8",
+            "sourceColumn": "Mês",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Nome do Mês",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "e90933d5-1b0c-44d7-9c31-174c81943b44",
+            "sourceColumn": "Nome do Mês",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Dia",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "f116a5d6-ba09-4e28-8977-ef335f2846d2",
+            "sourceColumn": "Dia",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Dia da Semana",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "0df85118-4196-4239-8013-ca7c852b0618",
+            "sourceColumn": "Dia da Semana",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Semana do Mês",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "fdb759b0-295d-4494-9d46-a77264ad8a54",
+            "sourceColumn": "Semana do Mês",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Semana do Ano",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "a0be3a3f-f212-4793-98a7-ae64062ead80",
+            "sourceColumn": "Semana do Ano",
+            "summarizeBy": "sum"
+          }
+        ],
+        "lineageTag": "62c53ee4-56ce-4318-880b-64ac433d3fa6",
+        "partitions": [
+          {
+            "name": "D - Date",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "",
+                "    MinDate = List.Min( #\"F - Transactions\"[transac_date]),",
+                "    MaxDate = List.Max(#\"F - Historical Prices\"[date]),",
+                "    RangeOfDates = Table.FromList(List.Dates(MinDate, Duration.Days(MaxDate - MinDate) +1, #duration(1, 0, 0, 0)), Splitter.SplitByNothing(), {\"Date\"}),",
+                "    #\"Mês Inserido\" = Table.AddColumn(RangeOfDates, \"Mês\", each Date.Month([Date]), Int64.Type),",
+                "    #\"Nome do Mês Inserido\" = Table.AddColumn(#\"Mês Inserido\", \"Nome do Mês\", each Date.MonthName([Date]), type text),",
+                "    #\"Dia Inserido\" = Table.AddColumn(#\"Nome do Mês Inserido\", \"Dia\", each Date.Day([Date]), Int64.Type),",
+                "    #\"Dia da Semana Inserido\" = Table.AddColumn(#\"Dia Inserido\", \"Dia da Semana\", each Date.DayOfWeek([Date]), Int64.Type),",
+                "    #\"Semana do Mês Inserida\" = Table.AddColumn(#\"Dia da Semana Inserido\", \"Semana do Mês\", each Date.WeekOfMonth([Date]), Int64.Type),",
+                "    #\"Semana do Ano Inserida\" = Table.AddColumn(#\"Semana do Mês Inserida\", \"Semana do Ano\", each Date.WeekOfYear([Date]), Int64.Type)",
+                "    ",
+                "",
+                "in",
+                "    #\"Semana do Ano Inserida\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

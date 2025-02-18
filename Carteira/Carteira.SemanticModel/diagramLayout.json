@@ -1,0 +1,316 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 166
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 765.29986931861185,
+            "y": 287.21474394692029
+          },
+          "nodeIndex": "D - Date",
+          "nodeLineageTag": "62c53ee4-56ce-4318-880b-64ac433d3fa6",
+          "size": {
+            "height": 248,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 207.13679623223413,
+            "y": 265.16993846231935
+          },
+          "nodeIndex": "D - Stocks",
+          "nodeLineageTag": "c442708f-d091-4fe7-b4f9-7b2e83e520d7",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 316.0096685607989,
+            "y": 516.42948789384059
+          },
+          "nodeIndex": "F - Historical Prices",
+          "nodeLineageTag": "41d75066-7878-4d58-8dcf-449442e62ac9",
+          "size": {
+            "height": 296,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1049.2998693186119,
+            "y": 261.21474394692029
+          },
+          "nodeIndex": "F - News",
+          "nodeLineageTag": "87ce2262-ad44-4899-8f80-131309fd40de",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 491.2998693186118,
+            "y": -10
+          },
+          "nodeIndex": "F - Returns",
+          "nodeLineageTag": "720a0e15-288b-48fc-a170-d133cd5aa07d",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 10,
+            "y": 13.386467141996945
+          },
+          "nodeIndex": "F - Transactions",
+          "nodeLineageTag": "0f0737d8-1980-4ee1-b0ba-6a01d7754f2a",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "Todas as tabelas",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    },
+    {
+      "ordinal": 1,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 294,
+            "y": 0
+          },
+          "nodeIndex": "F - Historical Prices",
+          "nodeLineageTag": "41d75066-7878-4d58-8dcf-449442e62ac9",
+          "size": {
+            "height": 671,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 10,
+            "y": 38
+          },
+          "nodeIndex": "D - Stocks",
+          "nodeLineageTag": "c442708f-d091-4fe7-b4f9-7b2e83e520d7",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 737,
+            "y": 89
+          },
+          "nodeIndex": "D - Date",
+          "nodeLineageTag": "62c53ee4-56ce-4318-880b-64ac433d3fa6",
+          "size": {
+            "height": 248,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "Prices",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    },
+    {
+      "ordinal": 2,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 294,
+            "y": 0
+          },
+          "nodeIndex": "F - Transactions",
+          "nodeLineageTag": "0f0737d8-1980-4ee1-b0ba-6a01d7754f2a",
+          "size": {
+            "height": 511,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 10,
+            "y": -10
+          },
+          "nodeIndex": "D - Stocks",
+          "nodeLineageTag": "c442708f-d091-4fe7-b4f9-7b2e83e520d7",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 560,
+            "y": 14
+          },
+          "nodeIndex": "D - Date",
+          "nodeLineageTag": "62c53ee4-56ce-4318-880b-64ac433d3fa6",
+          "size": {
+            "height": 248,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "Transac",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    },
+    {
+      "ordinal": 3,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 294,
+            "y": -10
+          },
+          "nodeIndex": "F - Returns",
+          "nodeLineageTag": "720a0e15-288b-48fc-a170-d133cd5aa07d",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 10,
+            "y": 40
+          },
+          "nodeIndex": "D - Stocks",
+          "nodeLineageTag": "c442708f-d091-4fe7-b4f9-7b2e83e520d7",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 614,
+            "y": 37
+          },
+          "nodeIndex": "D - Date",
+          "nodeLineageTag": "62c53ee4-56ce-4318-880b-64ac433d3fa6",
+          "size": {
+            "height": 248,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "Returns",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    },
+    {
+      "ordinal": 4,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 401,
+            "y": 134
+          },
+          "nodeIndex": "F - News",
+          "nodeLineageTag": "87ce2262-ad44-4899-8f80-131309fd40de",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 756,
+            "y": 85
+          },
+          "nodeIndex": "D - Date",
+          "nodeLineageTag": "62c53ee4-56ce-4318-880b-64ac433d3fa6",
+          "size": {
+            "height": 248,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 11,
+            "y": 84
+          },
+          "nodeIndex": "D - Stocks",
+          "nodeLineageTag": "c442708f-d091-4fe7-b4f9-7b2e83e520d7",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "Layout 1",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "Todas as tabelas",
+  "defaultDiagram": "Todas as tabelas"
+}

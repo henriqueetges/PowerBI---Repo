@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Carteira"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "b1d6b8cb-641e-47c2-9e0a-84a1e01812e3"
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "config": "{\"version\":\"5.59\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU10\",\"version\":\"5.61\",\"type\":2}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"slowDataSourceSettings\":{\"isCrossHighlightingDisabled\":false,\"isSlicerSelectionsButtonEnabled\":false,\"isFilterSelectionsButtonEnabled\":false,\"isFieldWellButtonEnabled\":false,\"isApplyAllButtonEnabled\":false},\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}]}}",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY24SU10",
+            "path": "BaseThemes/CY24SU10.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "config": "{}",
+      "displayName": "Página 1",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "238593c83bdb6c53baae",
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"5e4a17befeb70e2ec5df\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":0,\"z\":0,\"width\":299.5744680851064,\"height\":93.37386018237082}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"D - Date.Date\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"D - Date\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Date\"},\"Name\":\"D - Date.Date\",\"NativeReferenceName\":\"Date\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Date\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"data\":[{\"properties\":{\"startDate\":{\"expr\":{\"Literal\":{\"Value\":\"datetime'2024-07-07T00:00:00'\"}}},\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Between'\"}}}}}],\"general\":[{\"properties\":{\"filter\":{\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"D - Date\",\"Type\":0}],\"Where\":[{\"Condition\":{\"Comparison\":{\"ComparisonKind\":2,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Date\"}},\"Right\":{\"Literal\":{\"Value\":\"datetime'2024-07-07T00:00:00'\"}}}}}]}}}}]}}}",
+          "filters": "[]",
+          "height": 93.37,
+          "width": 299.57,
+          "x": 0.00,
+          "y": 0.00,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"6768eb111ab3cff132b6\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":307.35562310030394,\"z\":3,\"width\":318.0547112462006,\"height\":412.40121580547117,\"tabOrder\":2}}],\"singleVisual\":{\"visualType\":\"pivotTable\",\"projections\":{\"Rows\":[{\"queryRef\":\"F - Returns.ticker\",\"active\":true}],\"Values\":[{\"queryRef\":\"Sum(F - Returns.total_position)\"},{\"queryRef\":\"Sum(F - Returns.pm)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"f\",\"Entity\":\"F - Returns\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"ticker\"},\"Name\":\"F - Returns.ticker\",\"NativeReferenceName\":\"ticker\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"total_position\"}},\"Function\":4},\"Name\":\"Sum(F - Returns.total_position)\",\"NativeReferenceName\":\"Position\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"pm\"}},\"Function\":4},\"Name\":\"Sum(F - Returns.pm)\",\"NativeReferenceName\":\"PM\"}]},\"columnProperties\":{\"Sum(F - Returns.total_position)\":{\"displayName\":\"Position\"},\"Sum(F - Returns.pm)\":{\"displayName\":\"PM\"}},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]",
+          "height": 412.40,
+          "width": 318.05,
+          "x": 0.00,
+          "y": 307.36,
+          "z": 3.00
+        },
+        {
+          "config": "{\"name\":\"940c5f9891f0884493db\",\"layouts\":[{\"id\":0,\"position\":{\"x\":318.0547112462006,\"y\":0,\"z\":2,\"width\":922.0668693009119,\"height\":299.5744680851064,\"tabOrder\":1}}],\"singleVisual\":{\"visualType\":\"lineChart\",\"projections\":{\"Category\":[{\"queryRef\":\"D - Date.Date\",\"active\":true}],\"Y\":[{\"queryRef\":\"Sum(F - Returns.position_close)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"D - Date\",\"Type\":0},{\"Name\":\"f\",\"Entity\":\"F - Returns\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Date\"},\"Name\":\"D - Date.Date\",\"NativeReferenceName\":\"Date\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"position_close\"}},\"Function\":0},\"Name\":\"Sum(F - Returns.position_close)\",\"NativeReferenceName\":\"Soma de position_close\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Date\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"valueAxis\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"showAxisTitle\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"categoryAxis\":[{\"properties\":{\"showAxisTitle\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Total Position'\"}}},\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 299.57,
+          "width": 922.07,
+          "x": 318.05,
+          "y": 0.00,
+          "z": 2.00
+        },
+        {
+          "config": "{\"name\":\"9c34b510e796ea4966dc\",\"layouts\":[{\"id\":0,\"position\":{\"x\":318.0547112462006,\"y\":307.35562310030394,\"z\":1,\"width\":961.9452887537994,\"height\":412.40121580547117}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"D - Date.Date\"},{\"queryRef\":\"F - News.ticker\"},{\"queryRef\":\"F - News.summary\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"f\",\"Entity\":\"F - News\",\"Type\":0},{\"Name\":\"d\",\"Entity\":\"D - Date\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"ticker\"},\"Name\":\"F - News.ticker\",\"NativeReferenceName\":\"ticker\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"summary\"},\"Name\":\"F - News.summary\",\"NativeReferenceName\":\"summary\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Date\"},\"Name\":\"D - Date.Date\",\"NativeReferenceName\":\"Date\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Date\"}}}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"values\":[{\"properties\":{},\"selector\":{\"data\":[{\"dataViewWildcard\":{\"matchingOption\":1}}],\"metadata\":\"F - News.ticker\"}},{\"properties\":{\"webURL\":{\"expr\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"F - News\"}},\"Property\":\"clickThroughUrl.url\"}},\"Function\":3}}}},\"selector\":{\"data\":[{\"dataViewWildcard\":{\"matchingOption\":1}}],\"metadata\":\"F - News.summary\"}}],\"columnFormatting\":[{\"properties\":{\"styleValues\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}},\"selector\":{\"metadata\":\"F - News.summary\"}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Main News'\"}}},\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 412.40,
+          "width": 961.95,
+          "x": 318.05,
+          "y": 307.36,
+          "z": 1.00
+        }
+      ],
+      "width": 1280.00
+    }
+  ]
+}
