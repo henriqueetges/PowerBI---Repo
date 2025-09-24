@@ -1,0 +1,64 @@
+table 'F - Transactions'
+	lineageTag: 0f0737d8-1980-4ee1-b0ba-6a01d7754f2a
+
+	column transac_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 13938d71-cfa2-4212-b8e7-72b365f81c7d
+		summarizeBy: sum
+		sourceColumn: transac_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column ticker
+		dataType: string
+		lineageTag: acbc1714-4feb-4c98-a16e-ed89c9633240
+		summarizeBy: none
+		sourceColumn: ticker
+
+		annotation SummarizationSetBy = Automatic
+
+	column transac_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 54fe4aed-9c71-47e7-9844-390932fc57d1
+		summarizeBy: none
+		sourceColumn: transac_date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column price
+		dataType: double
+		lineageTag: 638cf4e7-939d-42f5-965f-5d58a466cc59
+		summarizeBy: sum
+		sourceColumn: price
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column quantity
+		dataType: int64
+		formatString: 0
+		lineageTag: 3cdce2bc-a15a-49fa-bfee-ba10997023dd
+		summarizeBy: sum
+		sourceColumn: quantity
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'F - Transactions' = m
+		mode: import
+		source =
+				let
+				    Fonte = PostgreSQL.Database("localhost:5432", "inv"),
+				    public_transac = Fonte{[Schema="public",Item="transac"]}[Data],
+				    #"Tipo Alterado" = Table.TransformColumnTypes(public_transac,{{"transac_date", type date}})
+				in
+				    #"Tipo Alterado"
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Table
+

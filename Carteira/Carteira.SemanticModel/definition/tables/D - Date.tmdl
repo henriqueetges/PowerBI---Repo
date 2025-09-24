@@ -1,0 +1,95 @@
+table 'D - Date'
+	lineageTag: 62c53ee4-56ce-4318-880b-64ac433d3fa6
+
+	column Date
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 2dbf918c-4493-403e-a67d-6a68358af4e7
+		summarizeBy: none
+		sourceColumn: Date
+
+		changedProperty = SortByColumn
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Mês
+		dataType: int64
+		formatString: 0
+		lineageTag: dffe3ed5-7faf-491a-983d-f42ecd8946d8
+		summarizeBy: sum
+		sourceColumn: Mês
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Nome do Mês'
+		dataType: string
+		lineageTag: e90933d5-1b0c-44d7-9c31-174c81943b44
+		summarizeBy: none
+		sourceColumn: Nome do Mês
+
+		annotation SummarizationSetBy = Automatic
+
+	column Dia
+		dataType: int64
+		formatString: 0
+		lineageTag: f116a5d6-ba09-4e28-8977-ef335f2846d2
+		summarizeBy: sum
+		sourceColumn: Dia
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Dia da Semana'
+		dataType: int64
+		formatString: 0
+		lineageTag: 0df85118-4196-4239-8013-ca7c852b0618
+		summarizeBy: sum
+		sourceColumn: Dia da Semana
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Semana do Mês'
+		dataType: int64
+		formatString: 0
+		lineageTag: fdb759b0-295d-4494-9d46-a77264ad8a54
+		summarizeBy: sum
+		sourceColumn: Semana do Mês
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Semana do Ano'
+		dataType: int64
+		formatString: 0
+		lineageTag: a0be3a3f-f212-4793-98a7-ae64062ead80
+		summarizeBy: sum
+		sourceColumn: Semana do Ano
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'D - Date' = m
+		mode: import
+		source = ```
+				let
+				
+				    MinDate = List.Min( #"F - Transactions"[transac_date]),
+				    MaxDate = List.Max(#"F - Historical Prices"[date]),
+				    RangeOfDates = Table.FromList(List.Dates(MinDate, Duration.Days(MaxDate - MinDate) +1, #duration(1, 0, 0, 0)), Splitter.SplitByNothing(), {"Date"}),
+				    #"Mês Inserido" = Table.AddColumn(RangeOfDates, "Mês", each Date.Month([Date]), Int64.Type),
+				    #"Nome do Mês Inserido" = Table.AddColumn(#"Mês Inserido", "Nome do Mês", each Date.MonthName([Date]), type text),
+				    #"Dia Inserido" = Table.AddColumn(#"Nome do Mês Inserido", "Dia", each Date.Day([Date]), Int64.Type),
+				    #"Dia da Semana Inserido" = Table.AddColumn(#"Dia Inserido", "Dia da Semana", each Date.DayOfWeek([Date]), Int64.Type),
+				    #"Semana do Mês Inserida" = Table.AddColumn(#"Dia da Semana Inserido", "Semana do Mês", each Date.WeekOfMonth([Date]), Int64.Type),
+				    #"Semana do Ano Inserida" = Table.AddColumn(#"Semana do Mês Inserida", "Semana do Ano", each Date.WeekOfYear([Date]), Int64.Type)
+				    
+				
+				in
+				    #"Semana do Ano Inserida"
+				```
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Table
+

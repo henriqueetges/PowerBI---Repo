@@ -1,0 +1,106 @@
+Card Quality = 
+VAR fillValue = format([Weighted Score (Snapshot)], "0")
+VAR barHeight = 10
+VAR barBackgroundColor = "RGB(230, 230, 230)"
+VAR borderRadius = 10
+VAR fillColor = SWITCH(TRUE()
+, [Weighted Score (Snapshot)] >=80, "RGB(0, 128, 0)"
+, [Weighted Score (Snapshot)] >= 50,"RGB(255, 255, 0)"
+,  "RGB(255, 0, 0)")
+VAR changecolor = SWITCH(TRUE(),[QScore Diff (last snapshot)] > 0, "RGB(0, 128, 0)",[QScore Diff (last snapshot)] < 0,  "RGB(255, 0, 0)", "RGB(230, 230, 230)" )
+VAR animationDuration = 1
+VAR textColor = "RGB(255, 255, 255)"
+VAR fontWeight = 600
+RETURN
+
+"<style>
+    .container {
+        position: relative;
+        display: inline-block;
+        width: 100%;
+        overflow: hidden;
+    }
+    .kpi_holder {
+        display: flex;
+    }
+    
+    .hover-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(240, 240, 240, 0.95);
+        color: #333;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+        font-weight: 500;
+        border-radius: 10px;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(100%);
+        transition: all 0.4s ease;
+        z-index: 2;
+        text-align: center;
+        padding: 10px;
+    }
+    .container:hover .hover-overlay {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0%);
+    }
+    .change {
+        width: 100%;
+        margin-top: 10px;
+        font-weight: "&fontWeight&";
+        color: "&changecolor&";
+    }
+    .kpi_value {
+        font-weight: "&fontWeight&";
+        font-size: 50px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin-left: 10px;
+
+        
+    }
+    .progress-bar {
+        width: 95%;
+        height: "&barHeight&"px;
+        background-color: "&barBackgroundColor&";
+        border-radius: "&borderRadius&"px;
+        position: relative;
+        margin-left: 5px;
+        margin-top: 10px;
+    }
+    .progress-fill {
+        height: 100%;
+        background-color: "&fillColor&";
+        border-radius: "&borderRadius&"px;
+        animation: progress-animation "&animationDuration&"s ease-out forwards;
+        color: "&textColor&";
+        text-align: center;
+        position: relative;
+        left: 0;
+        top: 0;
+    }
+
+    @keyframes progress-animation {
+        0% {
+            width: 0%;
+        }
+    }
+</style>
+<div class='container'>
+     <div class='hover-overlay'>
+        Weighted score out of the dimension scores
+    </div>
+    <div class='kpi_holder'>
+    <div class='kpi_value'> "&fillValue&"</div>
+    <div class='change'> "&[QScore Change]&" </div>
+    </div>
+    <div class='progress-bar'>
+        <div class='progress-fill' style='width: "&fillValue&"%;'>
+        </div>
+</div>"

@@ -3,7 +3,6 @@
   "datasetReference": {
     "byPath": {
       "path": "../Carteira.SemanticModel"
-    },
-    "byConnection": null
+    }
   }
 }

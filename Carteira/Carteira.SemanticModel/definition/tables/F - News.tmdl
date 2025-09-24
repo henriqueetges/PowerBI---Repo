@@ -1,0 +1,104 @@
+table 'F - News'
+	lineageTag: 87ce2262-ad44-4899-8f80-131309fd40de
+
+	column index
+		dataType: int64
+		formatString: 0
+		lineageTag: 467b6dbb-8668-4ad3-a2fa-b1a8ea77fd4b
+		summarizeBy: sum
+		sourceColumn: index
+
+		annotation SummarizationSetBy = Automatic
+
+	column id
+		dataType: string
+		lineageTag: eeb47ba0-d55d-49ab-ab74-48094b82b7d3
+		summarizeBy: none
+		sourceColumn: id
+
+		annotation SummarizationSetBy = Automatic
+
+	column title
+		dataType: string
+		lineageTag: 5d7941e7-aeaf-4f82-9294-de971191a71f
+		summarizeBy: none
+		sourceColumn: title
+
+		annotation SummarizationSetBy = Automatic
+
+	column description
+		dataType: string
+		lineageTag: 6a698ad5-b755-4b68-8f46-25a48cba3f35
+		summarizeBy: none
+		sourceColumn: description
+
+		annotation SummarizationSetBy = Automatic
+
+	column storyline
+		dataType: string
+		lineageTag: 3477f767-5d49-42ed-9d92-4c50d670ce22
+		summarizeBy: none
+		sourceColumn: storyline
+
+		annotation SummarizationSetBy = Automatic
+
+	column summary
+		dataType: string
+		lineageTag: 8a25035d-b4ef-4963-bb17-5dcb5f7ec30b
+		summarizeBy: none
+		sourceColumn: summary
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'provider.displayName'
+		dataType: string
+		lineageTag: 04780208-4251-4ae0-91a0-adb058a31b45
+		summarizeBy: none
+		sourceColumn: provider.displayName
+
+		annotation SummarizationSetBy = Automatic
+
+	column pubDate
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: d064759a-648a-437b-a4f6-1c95ec1232c0
+		summarizeBy: none
+		sourceColumn: pubDate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column ticker
+		dataType: string
+		lineageTag: 6ee505e1-061f-41b6-86bb-42fd497761d2
+		summarizeBy: none
+		sourceColumn: ticker
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'clickThroughUrl.url'
+		dataType: string
+		lineageTag: a20e8c96-f8a0-41c7-9ec5-7f297e9c36f6
+		summarizeBy: none
+		sourceColumn: clickThroughUrl.url
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'F - News' = m
+		mode: import
+		source =
+				let
+				    Fonte = PostgreSQL.Database("localhost:5432", "inv"),
+				    public_stock_news = Fonte{[Schema="public",Item="stock_news"]}[Data],
+				    #"Linhas Classificadas" = Table.Sort(public_stock_news,{{"pubDate", Order.Descending}}),
+				    #"Tipo Alterado" = Table.TransformColumnTypes(#"Linhas Classificadas",{{"pubDate", type datetime}}),
+				    #"Tipo Alterado1" = Table.TransformColumnTypes(#"Tipo Alterado",{{"pubDate", type date}}),
+				    #"Texto Extraído Antes do Delimitador" = Table.TransformColumns(#"Tipo Alterado1", {{"ticker", each Text.BeforeDelimiter(_, "."), type text}})
+				in
+				    #"Texto Extraído Antes do Delimitador"
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,32 @@
+relationship AutoDetected_d8b197d0-fcf2-43c6-9ea6-848e6384cdd3
+	fromColumn: 'F - Historical Prices'.ticker
+	toColumn: 'D - Stocks'.ticker
+
+relationship AutoDetected_4d9a901b-d889-4cb8-ad30-aa9c0f7441a4
+	fromColumn: 'F - Returns'.ticker
+	toColumn: 'D - Stocks'.ticker
+
+relationship AutoDetected_92b18412-2559-4884-813a-0522b14e5a46
+	fromColumn: 'F - Transactions'.ticker
+	toColumn: 'D - Stocks'.ticker
+
+relationship 5f5beb45-aa66-7602-fbe3-706cdf120fbc
+	fromColumn: 'F - Historical Prices'.date
+	toColumn: 'D - Date'.Date
+
+relationship ce0cd693-219a-5092-c285-c8884f311b73
+	fromColumn: 'F - Transactions'.transac_date
+	toColumn: 'D - Date'.Date
+
+relationship 54cb5383-9018-9e69-c870-c34791506a65
+	fromColumn: 'F - Returns'.dt
+	toColumn: 'D - Date'.Date
+
+relationship 1e80a64c-e09d-f7bd-1f6c-7c165af5ec6c
+	fromColumn: 'F - News'.ticker
+	toColumn: 'D - Stocks'.ticker
+
+relationship 5a0fcd17-182b-e274-96ab-9e64ddb4fefd
+	fromColumn: 'F - News'.pubDate
+	toColumn: 'D - Date'.Date
+

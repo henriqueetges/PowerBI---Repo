@@ -1,0 +1,125 @@
+table 'F - Returns'
+	lineageTag: 720a0e15-288b-48fc-a170-d133cd5aa07d
+
+	column dt
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 8b4eaebe-62a4-415b-ae75-9f5a0ec1f4df
+		summarizeBy: none
+		sourceColumn: dt
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column ticker
+		dataType: string
+		lineageTag: af974767-4079-4988-a161-601a1167420d
+		summarizeBy: none
+		sourceColumn: ticker
+
+		annotation SummarizationSetBy = Automatic
+
+	column total_position
+		dataType: double
+		lineageTag: db8f88b7-bf42-44a2-9731-fef6a8fb920f
+		summarizeBy: sum
+		sourceColumn: total_position
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column total_quantity
+		dataType: double
+		lineageTag: 9dfcd2d8-9924-46db-b95f-0d11da913e09
+		summarizeBy: sum
+		sourceColumn: total_quantity
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column pm
+		dataType: double
+		lineageTag: 0cae2168-b53b-4030-b3ad-8b4562b77eea
+		summarizeBy: sum
+		sourceColumn: pm
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column position_open
+		dataType: double
+		lineageTag: 69831ff8-93c7-4ef3-a067-32fae031f94b
+		summarizeBy: sum
+		sourceColumn: position_open
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column position_close
+		dataType: double
+		lineageTag: dba58823-ec82-4f25-8df2-cc3dd0806946
+		summarizeBy: sum
+		sourceColumn: position_close
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column position_high
+		dataType: double
+		lineageTag: 7769a2d7-ee35-4461-b3c8-05c7ea848d62
+		summarizeBy: sum
+		sourceColumn: position_high
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column pl_open
+		dataType: double
+		lineageTag: 14da0cbb-3a37-4b53-abbf-9fead891918a
+		summarizeBy: sum
+		sourceColumn: pl_open
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column pl_close
+		dataType: double
+		lineageTag: 3deaf461-5e1a-49bf-a866-5b77a92fe064
+		summarizeBy: sum
+		sourceColumn: pl_close
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column pl_high
+		dataType: double
+		lineageTag: 35fc343c-70a8-484e-8c08-b7c955c85921
+		summarizeBy: sum
+		sourceColumn: pl_high
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'F - Returns' = m
+		mode: import
+		source =
+				let
+				    Fonte = PostgreSQL.Database("localhost:5432", "inv"),
+				    dbt_dbt_porfolio_returns = Fonte{[Schema="dbt",Item="dbt_porfolio_returns"]}[Data]
+				in
+				    dbt_dbt_porfolio_returns
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Table
+
